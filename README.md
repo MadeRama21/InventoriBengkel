@@ -4,7 +4,7 @@
 
 <p align="center">
   <br>
-  <img width="100" src="./assets/logo.svg" alt="Tailwind CSS logo">
+  <img width="100" src="/img/tailwind.png" alt="Tailwind CSS logo">
   <br>
   <br>
 </p>
