@@ -98,7 +98,7 @@
     "yaml": "^2.6.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": " ",
     "dev": "npx tailwindcss -i ./src/css/input.css -o ./dist/css/output.css --watch"  },
   "author": "Kelompok Bengkel",
   "license": "ISC"
