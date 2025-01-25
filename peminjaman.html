@@ -109,14 +109,15 @@
                     <form class="p-4 md:p-5">
                         <div class="grid grid-cols-2 gap-4 mb-4">
                             <div class="col-span-2">
-                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Nama Barang</label>
+                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Nama
+                                    Peminjam</label>
                                 <input type="text" name="name" id="name"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                                    placeholder="Masukan nama barang" required="">
+                                    placeholder="Masukan nama peminjam" required="">
                             </div>
-                            <div class="col-span-2 sm:col-span-1">
-                                <label for="category" class="block mb-2 text-sm font-medium text-gray-900 ">Lokasi
-                                    Barang</label>
+                            <div class="col-span-2">
+                                <label for="category" class="block mb-2 text-sm font-medium text-gray-900 ">Kelas
+                                    Peminjam</label>
                                 <select id="category"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 ">
                                     <option selected="">Pilih</option>
@@ -126,46 +127,33 @@
                                     <option value="RGRPL">Ruang Guru RPL</option>
                                 </select>
                             </div>
+
+
                             <div class="col-span-2 sm:col-span-1">
-                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Kode Barang</label>
-                                <input type="text" name="name" id="name"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                                    placeholder="Masukan kode barang" required="">
-                            </div>
-    
-                            <div class="col-span-2 sm:col-span-1">
-                                <label for="category" class="block mb-2 text-sm font-medium text-gray-900 ">Kondisi
+                                <label for="category" class="block mb-2 text-sm font-medium text-gray-900 ">
                                     Barang</label>
                                 <select id="category"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 ">
                                     <option selected="">Pilih</option>
                                     <option value="baik">Baik</option>
                                     <option value="buruk">Buruk</option>
-    
+
                                 </select>
                             </div>
                             <div class="col-span-2 sm:col-span-1">
-                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Stok Barang</label>
-                                <input type="text" name="name" id="name"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                                    placeholder="Masukan stok barang" required="">
-                            </div>
-                            <div class="col-span-2 sm:col-span-1">
-                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Tahun Masuk</label>
-                                <select id="yearPicker"
+                                <label for="category" class="block mb-2 text-sm font-medium text-gray-900 ">
+                                    Kondisi</label>
+                                <select id="category"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 ">
-                                    <option value="2023">2023</option>
-                                    <option value="2024">2024</option>
-                                    <option value="2025">2025</option>
-                                    <!-- Tambahkan lebih banyak tahun -->
+                                    <option selected="">Pilih</option>
+                                    <option value="baik">Baik</option>
+                                    <option value="buruk">Buruk</option>
+
                                 </select>
                             </div>
-                            <div class="col-span-2 sm:col-span-1">
-                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Merk</label>
-                                <input type="text" name="name" id="name"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                                    placeholder="Masukan merk barang" required="">
-                            </div>
+
+                       
+
                         </div>
                         <button type="submit"
                             class="text-white inline-flex items-center bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-green font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
@@ -179,11 +167,11 @@
                         </button>
                     </form>
                 </div>
-               
-              
-            
+
+
+
             </div>
-          
+
         </div>
 
 
