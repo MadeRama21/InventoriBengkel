@@ -34,7 +34,6 @@
                     <span class="text-sm">Inventori</span>
                     <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
                 </a>
-
             </li>
             <li class="mb-1 group">
                 <a href="/peminjaman.html"
@@ -59,6 +58,28 @@
                     <span class="text-sm">Laporan</span>
                 </a>
             </li>
+            <li class="mb-1 group" id="kelola-user-dropdown">
+                <a href="#"
+                    class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+                    <i class="mr-2 text-lg ph ph-user-gear"></i>
+                    <span class="text-sm">Kelola User</span>
+                    <i class="ph ph-caret-right ml-auto group-[.selected]:rotate-90"></i>
+                </a>
+                <ul class="mt-2 hidden group-[.selected]:block group-[.selected]:bg-gray-950 rounded-lg "
+                    id="kelola-user-menu" style="list-style: none;">
+                    <li class="">
+                        <a href="/user.html"
+                            class="flex items-center w-full pt-3 pb-2 text-sm text-gray-100 before:w-1 before:rounded-full before:bg-gray-300 before:mr-3 pl-7 ">
+                            User terdaftar
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/verif.html"
+                            class="flex items-center w-full pt-2 pb-3 text-sm text-gray-100 before:w-1 before:rounded-full before:bg-gray-300 before:mr-3 pl-7">Verifikasi
+                            akun</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
         <div class="mt-auto">
             <a href="/login.html"
@@ -74,7 +95,7 @@
         <div class="bg-[#00ADB5] h-[50vh]">
             <div class="sticky top-0 left-0 z-30 flex items-center px-6 py-2 bg-white shadow-md shadow-black/5">
                 <button type="button" class="text-lg text-gray-600 sidebar-toggle">
-                    <i class="ph ph-list"></i>
+                    <i class="flex ph ph-list"></i>
                 </button>
                 <ul class="flex items-center ml-4 text-sm">
                     <li class="mr-2">
@@ -102,7 +123,7 @@
 
             </div>
             <div class="container px-4 md:px-10 ">
-                <div class="mt-16 mb-10">
+                <div class="px-4 mt-16 mb-10 md:mb-5">
                     <p class="text-white">Selamat Datang di,</p>
                     <h1 class="text-2xl font-bold text-white md:text-3xl">
                         Inventori Barang di Laboratorium RPL SMKN 1 Denpasar
@@ -111,28 +132,28 @@
                 <div
                     class="container relative flex flex-col justify-center gap-4 md:flex-row md:gap-6 lg:gap-10 top-10">
                     <div
-                        class="flex flex-col items-start justify-center w-full h-48 p-4 bg-white rounded-xl drop-shadow-md md:w-[30%] hover:scale-105 hover:-translate-y-2 hover:shadow-lg hover:shadow-gray-400 transition duration-300 ease-in-out">
-                        <p class="mb-4 text-black/80">Total Jenis Barang</p>
-                        <div class="flex items-center">
-                            <i class="text-5xl text-black/90 ph ph-toolbox md:text-6xl"></i>
-                            <span class="ml-2 text-xl text-black/80 md:text-2xl">20</span>
+                        class="flex flex-col items-start mx-auto pt-9 w-full h-48 px-5 bg-white rounded-xl drop-shadow-md md:w-[30%] hover:scale-105 hover:-translate-y-2 hover:shadow-lg hover:shadow-gray-400 transition duration-300 ease-in-out">
+                        <div class="flex items-center justify-between w-full">
+                            <p class="text-lg text-black/80">Total Barang</p>
+                            <i class="text-xl text-[#00ADB5] ph ph-toolbox bg-[#91e4e9] py-1 px-2"></i>
                         </div>
+                        <span class="pt-2 text-3xl font-bold text-black">20</span>
                     </div>
                     <div
-                        class="flex flex-col items-start justify-center w-full h-48 p-4 bg-white rounded-xl drop-shadow-md md:w-[30%] hover:scale-105 hover:-translate-y-2 hover:shadow-lg hover:shadow-gray-400 transition duration-300 ease-in-out">
-                        <p class="mb-4 text-black/80">Barang di pinjam</p>
-                        <div class="flex items-center">
-                            <i class="text-5xl text-black/90 ph ph-hand-arrow-down md:text-6xl"></i>
-                            <span class="ml-2 text-xl text-black/80 md:text-2xl">20</span>
+                        class="flex flex-col items-start mx-auto pt-9 w-full h-48 px-5 bg-white rounded-xl drop-shadow-md md:w-[30%] hover:scale-105 hover:-translate-y-2 hover:shadow-lg hover:shadow-gray-400 transition duration-300 ease-in-out">
+                        <div class="flex items-center justify-between w-full">
+                            <p class="text-lg text-black/80">Barang di pinjam</p>
+                            <i class="text-xl text-[#00ADB5] ph ph-hand-arrow-down bg-[#91e4e9] py-1 px-2"></i>
                         </div>
+                        <span class="pt-2 text-3xl font-bold text-black">5</span>
                     </div>
                     <div
-                        class="flex flex-col items-start justify-center w-full h-48 p-4 bg-white rounded-xl drop-shadow-md md:w-[30%] hover:scale-105 hover:-translate-y-2 hover:shadow-lg hover:shadow-gray-400 transition duration-300 ease-in-out">
-                        <p class="mb-4 text-black/80">Barang di kembalikan</p>
-                        <div class="flex items-center">
-                            <i class="text-5xl text-black/90 ph ph-hand-arrow-up md:text-6xl"></i>
-                            <span class="ml-2 text-xl text-black/80 md:text-2xl">20</span>
+                        class="flex flex-col items-start mx-auto pt-9 w-full h-48 px-5 bg-white rounded-xl drop-shadow-md md:w-[30%] hover:scale-105 hover:-translate-y-2 hover:shadow-lg hover:shadow-gray-400 transition duration-300 ease-in-out">
+                        <div class="flex items-center justify-between w-full">
+                            <p class="text-lg text-black/80">Barang di Kembalikan</p>
+                            <i class="text-xl text-[#00ADB5] ph ph-hand-arrow-up bg-[#91e4e9] py-1 px-2"></i>
                         </div>
+                        <span class="pt-2 text-3xl font-bold text-black">6</span>
                     </div>
                 </div>
 
@@ -229,9 +250,7 @@
             </div>
         </div>
     </main>
-
     <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="dist/js/script.js"></script>
 </body>
 

@@ -28,7 +28,7 @@
                     <span class="text-sm">Dashboard</span>
                 </a>
             </li>
-            <li class="mb-1 group active">
+            <li class="mb-1 group ">
                 <a href="/inventori.html"
                     class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 ">
                     <i class="mr-2 text-xl ph ph-archive"></i>
@@ -58,7 +58,7 @@
                     <span class="text-sm">Laporan</span>
                 </a>
             </li>
-            <li class="mb-1 group" id="kelola-user-dropdown">
+            <li class="mb-1 group active" id="kelola-user-dropdown">
                 <a href="#"
                     class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
                     <i class="mr-2 text-lg ph ph-user-gear"></i>
@@ -69,13 +69,13 @@
                     id="kelola-user-menu" style="list-style: none;">
                     <li class="">
                         <a href="/user.html"
-                            class="flex items-center w-full pt-3 pb-2 text-sm text-gray-100 before:w-1 before:rounded-full before:bg-gray-300 before:mr-3 pl-7 ">
+                            class="text-gray-100 text-sm  before:w-1 before:rounded-full before:bg-gray-300 before:mr-3 flex items-center pl-7  pt-3 pb-2 w-full group-[.selected]:bg-blue-950 rounded-t-md">
                             User terdaftar
                         </a>
-                    </li>
+                    </li>   
                     <li class="">
                         <a href="/verif.html"
-                            class="flex items-center w-full pt-2 pb-3 text-sm text-gray-100 before:w-1 before:rounded-full before:bg-gray-300 before:mr-3 pl-7">Verifikasi
+                            class="flex items-center w-full pt-2 pb-3 text-sm text-gray-300 hover:text-gray-100 before:w-1 before:rounded-full before:bg-gray-300 before:mr-3 pl-7">Verifikasi
                             akun</a>
                     </li>
                 </ul>
@@ -99,7 +99,7 @@
                 </button>
                 <ul class="flex items-center ml-4 text-sm">
                     <li class="mr-2">
-                        <a href="#" class="font-medium text-gray-400 hover:text-gray-600">Inventori</a>
+                        <a href="#" class="font-medium text-gray-400 hover:text-gray-600">Kelola user</a>
                     </li>
                 </ul>
                 <ul class="flex items-center ml-auto">
@@ -123,12 +123,27 @@
             </div>
             <div class="container px-4 md:px-10">
                 <div class="mt-16 mb-10 ">
-                    <h1 class="text-3xl font-bold text-white">Inventori Barang di Laboratorium RPL SMKN 1 Denpasar</h1>
+                    <h1 class="text-3xl font-bold text-white">Data Pengguna yang terdaftar</h1>
                 </div>
-                <button type="button" data-modal-target="crud-tambah" data-modal-toggle="crud-tambah"
-                    class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none "><i
-                        class="font-bold ph ph-plus"></i> Barang
-                    baru</button>
+                <form class="max-w-full mx-auto">
+                    <label for="default-search"
+                        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                        <input type="search" id="default-search"
+                            class="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg ps-10 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Search Content..." required />
+                        <button type="submit"
+                            class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                    </div>
+                </form>
+
                 <div class="relative z-10 flex justify-center overflow-x-auto top-5">
                     <table class="w-full text-sm text-left text-gray-500 rtl:text-right">
 
@@ -138,28 +153,17 @@
                                     No
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-center">
-                                    Barang
+                                    Nama
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-center">
-                                    Merek
+                                    Email
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-center">
-                                    Kode
-                                </th>
-                                <th scope="col" class="px-6 py-3 text-center">
-                                    Tahun Masuk
-                                </th>
-                                <th scope="col" class="px-6 py-3 text-center">
-                                    Asal
-                                </th>
-                                <th scope="col" class="px-6 py-3 text-center">
-                                    Kondisi
-                                </th>
-                                <th scope="col" class="px-6 py-3 text-center">
-                                    Stok
+                                    Tipe
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-center">
 
+                                </th>
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-center">
                                     <span class="sr-only">Aksi</span>
@@ -174,26 +178,15 @@
                                     1
                                 </th>
                                 <td class="px-6 py-4 text-center">
-                                    Laptop
+                                    Badra
                                 </td>
                                 <td class="px-6 py-4 text-center">
-                                    Acer
+                                    badragaming01@gmail.com
                                 </td>
                                 <td class="px-6 py-4 text-center">
-                                    LP2
+                                    atmin
                                 </td>
-                                <td class="px-6 py-4 text-center">
-                                    2023
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    LAB RPL 3
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    Baik
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    30
-                                </td>
+
                                 <td class="px-6 py-4 text-right ">
                                     <a href="#" class="flex items-center font-medium text-blue-600 hover:text-blue-800"
                                         data-modal-target="crud-edit" data-modal-toggle="crud-edit"><i
@@ -382,8 +375,8 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
-                    <h3 class="text-lg font-bold text-black ">Apakah Anda yakin ingin menghapus barang ini?</h3>
-                    <p class="text-[14px] text-black/80 "></p>Ini akan menghapus barang secara permanen dan tidak dapat
+                    <h3 class="text-lg font-bold text-black ">Apakah yakin ingin menghapus Akun ini?</h3>
+                    <p class="text-[14px] text-black/80 "></p>Ini akan menghapus Akun secara permanen dan tidak dapat
                     dikembalikan</p>
                     <div class="flex justify-center pt-5">
                         <button data-modal-hide="popup-modal" type="button"
@@ -407,7 +400,7 @@
                 <!-- Modal header -->
                 <div class="flex items-center justify-between p-4 border-b rounded-t md:p-5 ">
                     <h3 class="text-lg font-semibold text-gray-900 ">
-                        Edit Barang
+                        Edit User
                     </h3>
                     <button type="button"
                         class="inline-flex items-center justify-center w-8 h-8 text-sm text-gray-400 bg-transparent rounded-lg hover:bg-gray-200 hover:text-gray-900 ms-auto "
@@ -424,68 +417,32 @@
                 <form class="p-4 md:p-5">
                     <div class="grid grid-cols-2 gap-4 mb-4">
                         <div class="col-span-2">
-                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Nama Barang</label>
+                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Nama</label>
                             <input type="text" name="name" id="name"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                                placeholder="Masukan nama barang" required="">
+                                placeholder="Masukan Nama" required="">
                         </div>
-                        <div class="col-span-2 sm:col-span-1">
-                            <label for="category" class="block mb-2 text-sm font-medium text-gray-900 ">Lokasi
-                                Barang</label>
+                        <div class="col-span-2">
+                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Email</label>
+                            <input type="text" name="name" id="name"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
+                                placeholder="Masukan Email Baru" required="">
+                        </div>
+                        <div class="col-span-2">
+                            <label for="category" class="block mb-2 text-sm font-medium text-gray-900 ">Tipe</label>
                             <select id="category"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 ">
                                 <option selected="">Pilih</option>
-                                <option value="RPL1">Lab RPL 1</option>
-                                <option value="RPL2">Lab RPL 2</option>
-                                <option value="RPL3">Lab RPL 3</option>
-                                <option value="RGRPL">Ruang Guru RPL</option>
-                            </select>
-                        </div>
-                        <div class="col-span-2 sm:col-span-1">
-                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Kode Barang</label>
-                            <input type="text" name="name" id="name"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                                placeholder="Masukan kode barang" required="">
-                        </div>
-
-                        <div class="col-span-2 sm:col-span-1">
-                            <label for="category" class="block mb-2 text-sm font-medium text-gray-900 ">Kondisi
-                                Barang</label>
-                            <select id="category"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 ">
-                                <option selected="">Pilih</option>
-                                <option value="baik">Baik</option>
-                                <option value="buruk">Buruk</option>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
 
                             </select>
-                        </div>
-                        <div class="col-span-2 sm:col-span-1">
-                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Stok Barang</label>
-                            <input type="text" name="name" id="name"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                                placeholder="Masukan stok barang" required="">
-                        </div>
-                        <div class="col-span-2 sm:col-span-1">
-                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Tahun Masuk</label>
-                            <select id="yearPicker"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 ">
-                                <option value="2023">2023</option>
-                                <option value="2024">2024</option>
-                                <option value="2025">2025</option>
-                                <!-- Tambahkan lebih banyak tahun -->
-                            </select>
-                        </div>
-                        <div class="col-span-2 sm:col-span-1">
-                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Merk</label>
-                            <input type="text" name="name" id="name"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                                placeholder="Masukan merk barang" required="">
                         </div>
                     </div>
                     <button type="submit"
                         class="text-white inline-flex items-center bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-green font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
-                        <i class="mr-1 text-lg ph ph-pencil-simple-line"></i>
-                        Update new product
+                        <i class="mr-1 text-lg ph ph-user-circle-plus"></i>
+                        Update User
                     </button>
                 </form>
             </div>

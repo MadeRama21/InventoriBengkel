@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventori Bengkel</title>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.1/dist/flowbite.min.js"></script>
     <link rel="stylesheet" href="dist/css/output.css">
 </head>
 
@@ -59,6 +59,27 @@
                     <i class="mr-2 text-lg ph ph-notepad"></i>
                     <span class="text-sm">Laporan</span>
                 </a>
+            <li class="mb-1 group" id="kelola-user-dropdown">
+                <a href="#"
+                    class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+                    <i class="mr-2 text-lg ph ph-user-gear"></i>
+                    <span class="text-sm">Kelola User</span>
+                    <i class="ph ph-caret-right ml-auto group-[.selected]:rotate-90"></i>
+                </a>
+                <ul class="mt-2 hidden group-[.selected]:block group-[.selected]:bg-gray-950 rounded-lg "
+                    id="kelola-user-menu" style="list-style: none;">
+                    <li class="">
+                        <a href="/user.html"
+                            class="flex items-center w-full pt-3 pb-2 text-sm text-gray-100 before:w-1 before:rounded-full before:bg-gray-300 before:mr-3 pl-7 ">
+                            User terdaftar
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/verif.html"
+                            class="flex items-center w-full pt-2 pb-3 text-sm text-gray-100 before:w-1 before:rounded-full before:bg-gray-300 before:mr-3 pl-7">Verifikasi
+                            akun</a>
+                    </li>
+                </ul>
             </li>
         </ul>
         <div class="mt-auto">
@@ -75,7 +96,7 @@
         <div class="bg-[#00ADB5] h-[50vh]">
             <div class="sticky top-0 left-0 z-30 flex items-center px-6 py-2 bg-white shadow-md shadow-black/5">
                 <button type="button" class="text-lg text-gray-600 sidebar-toggle">
-                    <i class="ph ph-list"></i>
+                    <i class="flex ph ph-list"></i>
                 </button>
                 <ul class="flex items-center ml-4 text-sm">
                     <li class="mr-2">
@@ -106,13 +127,14 @@
                     <h1 class="text-3xl font-bold text-white">Formulir Peminjaman Barang</h1>
                 </div>
                 <div class="bg-white rounded-md">
-                    
+
                     <form class="p-4 md:p-5">
                         <caption class="p-5 text-left text-gray-900 bg-white rtl:text-right ">
                             <h1 class="text-xl font-bold">
                                 Formulir Peminjaman
                             </h1>
-                            <p class="mt-1 text-sm font-normal text-gray-500 ">Silihakan isi data dengan benar, ingat kembalikan dan jaga kondisi barang!</p>
+                            <p class="mt-1 text-sm font-normal text-gray-500 ">Silihakan isi data dengan benar, ingat
+                                kembalikan dan jaga kondisi barang!</p>
                         </caption>
                         <div class="grid grid-cols-2 gap-4 mt-5 mb-4">
                             <div class="col-span-2">
@@ -156,7 +178,7 @@
                                 </select>
                             </div>
 
-                       
+
 
                         </div>
                         <button type="submit"
@@ -166,13 +188,10 @@
                     </form>
                 </div>
             </div>
-
         </div>
-
     </main>
-    
+
     <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="dist/js/script.js"></script>
 </body>
 

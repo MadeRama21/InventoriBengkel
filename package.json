@@ -99,7 +99,8 @@
   },
   "scripts": {
     "test": " ",
-    "dev": "npx tailwindcss -i ./src/css/input.css -o ./dist/css/output.css --watch"  },
+    "dev": "npx tailwindcss -i ./src/css/input.css -o ./dist/css/output.css --watch"
+  },
   "author": "Kelompok Bengkel",
   "license": "ISC"
 }

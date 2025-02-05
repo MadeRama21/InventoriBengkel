@@ -3,36 +3,70 @@ const sidebarToggle = document.querySelector(".sidebar-toggle");
 const sidebarOverlay = document.querySelector(".sidebar-overlay");
 const sidebarMenu = document.querySelector(".sidebar-menu");
 const main = document.querySelector(".main");
+
+// Inisialisasi sidebar untuk tampilan mobile
 if (window.innerWidth < 768) {
   main.classList.toggle("active");
   sidebarOverlay.classList.toggle("hidden");
   sidebarMenu.classList.toggle("-translate-x-full");
 }
+
+// Toggle sidebar
 sidebarToggle.addEventListener("click", function (e) {
   e.preventDefault();
   main.classList.toggle("active");
   sidebarOverlay.classList.toggle("hidden");
   sidebarMenu.classList.toggle("-translate-x-full");
 });
+
+// Tutup sidebar saat overlay diklik
 sidebarOverlay.addEventListener("click", function (e) {
   e.preventDefault();
   main.classList.add("active");
   sidebarOverlay.classList.add("hidden");
   sidebarMenu.classList.add("-translate-x-full");
 });
+
+// Fungsi untuk menangani dropdown sidebar
+function handleDropdownClick(e) {
+  e.preventDefault();
+  const parent = e.currentTarget.closest(".group");
+  const menu = parent.querySelector("ul");
+
+  // Toggle state dropdown
+  const isOpen = !menu.classList.contains("hidden");
+  menu.classList.toggle("hidden");
+  parent.classList.toggle("selected");
+
+  // Simpan state dropdown di localStorage
+  localStorage.setItem(parent.id, isOpen ? "closed" : "open");
+}
+
+// Fungsi untuk memulihkan state dropdown saat halaman dimuat
+function restoreDropdownState() {
+  const dropdown = document.getElementById("kelola-user-dropdown");
+  if (!dropdown) return;
+
+  const menu = dropdown.querySelector("ul");
+  const state = localStorage.getItem(dropdown.id);
+
+  if (state === "open") {
+    menu.classList.remove("hidden");
+    dropdown.classList.add("selected");
+  } else {
+    menu.classList.add("hidden");
+    dropdown.classList.remove("selected");
+  }
+}
+
+// Pasang event listener untuk dropdown
 document.querySelectorAll(".sidebar-dropdown-toggle").forEach(function (item) {
-  item.addEventListener("click", function (e) {
-    e.preventDefault();
-    const parent = item.closest(".group");
-    if (parent.classList.contains("selected")) {
-      parent.classList.remove("selected");
-    } else {
-      document.querySelectorAll(".sidebar-dropdown-toggle").forEach(function (i) {
-        i.closest(".group").classList.remove("selected");
-      });
-      parent.classList.add("selected");
-    }
-  });
+  item.addEventListener("click", handleDropdownClick);
+});
+
+// Pulihkan state dropdown saat halaman dimuat
+document.addEventListener("DOMContentLoaded", function () {
+  restoreDropdownState();
 });
 // end: Sidebar
 
@@ -61,6 +95,7 @@ document.querySelectorAll(".dropdown").forEach(function (item, index) {
     placement: "bottom-end",
   });
 });
+
 document.addEventListener("click", function (e) {
   const toggle = e.target.closest(".dropdown-toggle");
   const menu = e.target.closest(".dropdown-menu");
@@ -85,6 +120,7 @@ function hideDropdown() {
     item.classList.add("hidden");
   });
 }
+
 function showPopper(popperId) {
   popperInstance[popperId].setOptions(function (options) {
     return {
@@ -94,6 +130,7 @@ function showPopper(popperId) {
   });
   popperInstance[popperId].update();
 }
+
 function hidePopper(popperId) {
   popperInstance[popperId].setOptions(function (options) {
     return {
@@ -103,22 +140,3 @@ function hidePopper(popperId) {
   });
 }
 // end: Popper
-// start: Tab
-document.querySelectorAll('[data-tab]').forEach(function (item) {
-    item.addEventListener('click', function (e) {
-        e.preventDefault()
-        const tab = item.dataset.tab
-        const page = item.dataset.tabPage
-        const target = document.querySelector('[data-tab-for="' + tab + '"][data-page="' + page + '"]')
-        document.querySelectorAll('[data-tab="' + tab + '"]').forEach(function (i) {
-            i.classList.remove('active')
-        })
-        document.querySelectorAll('[data-tab-for="' + tab + '"]').forEach(function (i) {
-            i.classList.add('hidden')
-        })
-        item.classList.add('active')
-        target.classList.remove('hidden')
-    })
-})
-// end: Tab
-

@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SLicing Frontend Inventori Bengkel</title>
+    <title>Inventori Bengkel</title>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.1/dist/flowbite.min.js"></script>
     <link rel="stylesheet" href="dist/css/output.css">
 </head>
 
@@ -60,6 +60,28 @@
                     <span class="text-sm">Laporan</span>
                 </a>
             </li>
+            <li class="mb-1 group" id="kelola-user-dropdown">
+                <a href="#"
+                    class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+                    <i class="mr-2 text-lg ph ph-user-gear"></i>
+                    <span class="text-sm">Kelola User</span>
+                    <i class="ph ph-caret-right ml-auto group-[.selected]:rotate-90"></i>
+                </a>
+                <ul class="mt-2 hidden group-[.selected]:block group-[.selected]:bg-gray-950 rounded-lg "
+                    id="kelola-user-menu" style="list-style: none;">
+                    <li class="">
+                        <a href="/user.html"
+                            class="flex items-center w-full pt-3 pb-2 text-sm text-gray-100 before:w-1 before:rounded-full before:bg-gray-300 before:mr-3 pl-7 ">
+                            User terdaftar
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/verif.html"
+                            class="flex items-center w-full pt-2 pb-3 text-sm text-gray-100 before:w-1 before:rounded-full before:bg-gray-300 before:mr-3 pl-7">Verifikasi
+                            akun</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
         <div class="mt-auto">
             <a href="/login.html"
@@ -75,7 +97,7 @@
         <div class="bg-[#00ADB5] h-[50vh]">
             <div class="sticky top-0 left-0 z-30 flex items-center px-6 py-2 bg-white shadow-md shadow-black/5">
                 <button type="button" class="text-lg text-gray-600 sidebar-toggle">
-                    <i class="ph ph-list"></i>
+                    <i class="flex ph ph-list"></i>
                 </button>
                 <ul class="flex items-center ml-4 text-sm">
                     <li class="mr-2">
@@ -163,11 +185,9 @@
                                 </td>
                                 <td class="px-6 py-4 text-center ">
                                     <a href="#" class="font-medium hover:text-green-600 data-modal-target=" popup-modal"
-                                    data-modal-toggle="popup-modal"><i
-                                            class="text-3xl ph ph-check-circle"></i></a>
+                                        data-modal-toggle="popup-modal"><i class="text-3xl ph ph-check-circle"></i></a>
                                 </td>
                             </tr>
-
                         </tbody>
                     </table>
                 </div>
@@ -219,11 +239,8 @@
                         </li>
                     </ul>
                 </nav>
-
             </div>
-
         </div>
-
     </main>
     <!-- Modal kembalikan -->
     <div id="popup-modal" tabindex="-1"
@@ -247,7 +264,8 @@
                             d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
                     <h3 class="text-lg font-bold text-black ">Apakah Anda yakin ingin mengembalikan barang ini?</h3>
-                    <p class="text-[14px] text-black/80 "></p>Data pengembalian akan masuk ke dalam sistem, pastikan kondisi barang masih bagus dan laporkan jika terjadi kerusakan</p>
+                    <p class="text-[14px] text-black/80 "></p>Data pengembalian akan masuk ke dalam sistem, pastikan
+                    kondisi barang masih bagus dan laporkan jika terjadi kerusakan</p>
                     <div class="flex justify-center pt-5">
                         <button data-modal-hide="popup-modal" type="button"
                             class="text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-red-300  font-medium rounded-lg text-sm inline-flex items-center px-7 py-2.5 text-center">
@@ -256,14 +274,12 @@
                         <button data-modal-hide="popup-modal" type="button"
                             class="py-2.5 px-7 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 ">Batal</button>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 
     <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="dist/js/script.js"></script>
 </body>
 
